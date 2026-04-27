@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adventure Game | Doraemon GadgetVerse</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/game.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a class="brand" href="index.html"
+        ><span class="brand-badge">DG</span><span>Doraemon GadgetVerse</span></a
+      ><button class="menu-btn" id="menuBtn">☰</button>
+      <nav id="navLinks">
+        <a href="index.html">Home</a><a href="game.html">Adventure Game</a
+        ><a href="pocket.html">Pocket</a><a href="lab.html">Gadget Lab</a
+        ><a href="episodes.html">Episodes</a><a href="missions.html">Missions</a
+        ><a href="leaderboard.html">Leaderboard</a>
+      </nav>
+    </header>
+    <main>
+      <section class="page-hero compact game-hero">
+        <span class="pill">Improved Gameplay</span>
+        <h1>Nobita’s Rescue Mission</h1>
+        <p>
+          Move Nobita, collect comics, avoid Gian, exams, and traps, then use
+          Doraemon gadgets from your pocket for power-ups.
+        </p>
+      </section>
+      <section class="game-wrap">
+        <div class="game-hud">
+          <div><span>Score</span><strong id="score">0</strong></div>
+          <div><span>Comics</span><strong id="comics">0</strong></div>
+          <div><span>Lives</span><strong id="lives">3</strong></div>
+          <div><span>Power</span><strong id="power">None</strong></div>
+          <button class="btn mini" id="openPocket">Open Pocket</button>
+        </div>
+        <div class="game-status-bar">
+          <span class="game-status-pill"
+            ><span class="status-dot"></span
+            ><span id="gameStateLabel">Menu</span></span
+          ><span class="game-status-pill"
+            >Controls: A/D or ←/→, Space to jump, P for pocket</span
+          >
+        </div>
+        <canvas id="gameCanvas" width="1100" height="560"></canvas>
+        <div class="game-actions">
+          <button class="btn primary" id="startGame">Start / Restart</button>
+          <div class="game-tip-row">
+            <span class="keycap">A</span><span class="keycap">D</span
+            ><span class="keycap">←</span><span class="keycap">→</span
+            ><span class="keycap">Space</span><span class="keycap">P</span>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="modal-backdrop hidden" id="pocketModal">
+      <div class="modal">
+        <button class="modal-close" id="closePocket">×</button
+        ><span class="pill">Use in game</span>
+        <h2>Doraemon Pocket</h2>
+        <p class="muted">
+          Click a gadget to activate it. Uses reduce automatically.
+        </p>
+        <div class="card-grid small" id="gamePocketGrid"></div>
+      </div>
+    </div>
+    <footer>
+      <p>
+        Fan-made educational project. Nobita image sprite uses online image
+        asset with canvas fallback.
+      </p>
+    </footer>
+    <script>
+      window.NOBITA_SPRITE =
+        "https://www.pngitem.com/pimgs/m/204-2047786_doraemon-png-nobita-transparent-png.png";
+    </script>
+    <script src="js/storage.js"></script>
+    <script src="js/gadgets.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
